@@ -11,3 +11,6 @@ NDVI = function(x,y){
 NDVI_Result = function(x,y){
   overlay(raster(x), raster(y), fun = NDVI)
 }
+
+Test = function(){}
+  
