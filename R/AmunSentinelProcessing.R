@@ -8,7 +8,7 @@ NDVI = function(x,y){
 }
 
 #return result
-NDVI_Result = function(x,y){
+NDVI_Result2 = function(x,y){
   overlay(raster(x), raster(y), fun = NDVI)
 }
 
