@@ -1,4 +1,3 @@
-install.packages("raster")
 library(raster)
 
 #NDVI Formula: (NIR-red)/(NIR+red)
