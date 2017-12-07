@@ -1,6 +1,6 @@
 library(raster)
 
-#NDVI Formula: (NIR-red)/(NIR+red)
+#NDVI Formula: (NIR-red)/(NIR+red) j
 NDVI = function(x,y){
   result = (x-y)/(x+y)
   return (result)
