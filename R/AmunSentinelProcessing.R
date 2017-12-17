@@ -9,7 +9,7 @@ NDVI = function(x,y){
 
 #return result
 NDVI_Result = function(x,y){
-  output = overlay(raster(x), raster(y), fun = NDVI)
+  output = raster::overlay(raster::raster(x), raster::raster(y), fun = NDVI)
   raster::plot(output,axes=FALSE, box=FALSE, legend=FALSE)
   
   
