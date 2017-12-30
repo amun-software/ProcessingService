@@ -10,6 +10,7 @@ LazyData: true
 RoxygenNote: 6.0.1
 Imports: graphics,
          raster,
-         rgdal,
-         sp
+         sp,
+         rgdal
+         
 
