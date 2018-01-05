@@ -3,6 +3,10 @@ library(graphics)
 
 graphics::par(bg=NA)
 
+test = function(number){
+  return (number)
+  }
+
 ##########################Kanal-Mapping########################################
 TCI = function(channel1,channel2,channel3){
   r = raster::raster(channel1)
