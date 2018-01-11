@@ -13,7 +13,7 @@ TCI = function(channel1,channel2,channel3){
   g = raster::raster(channel2)
   b = raster::raster(channel3)
   RGB_brick= raster::brick(r,g,b)
-  raster::plotRGB(RGB_brick,r=1,g=2,b=3,stretch="lin")
+  raster::plotRGB(RGB_brick,r=1,g=2,b=3,stretch="lin",colNA=FALSE)
 }
 
 TCI_grayscale = function(img){
