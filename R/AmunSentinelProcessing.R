@@ -62,8 +62,7 @@ NDVI = function(x,y){
 #return result
 NDVI_Result = function(x,y){
   output = raster::overlay(raster::raster(base::normalizePath(x)), raster::raster(base::normalizePath(y)), fun = NDVI)
-  graphics::par(bg=NA)
-  raster::plot(output,axes=FALSE, box=FALSE, legend=FALSE)
+  return (output)
   
   
 }
