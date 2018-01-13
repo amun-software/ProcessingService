@@ -63,7 +63,7 @@ NDVI = function(x,y){
 NDVI_Result = function(x,y){
   output = raster::overlay(raster::raster(base::normalizePath(x)), raster::raster(base::normalizePath(y)), fun = NDVI)
   graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
-  raster::image(output,axes=FALSE,legend=FALSE, frame=FALSE, col=terrain.colors(256))
+  raster::image(output,axes=FALSE,legend=FALSE, frame=FALSE, col=terrain.colors(3))
   
   
 }
