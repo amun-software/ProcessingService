@@ -38,8 +38,8 @@ Contrast = function(band,min,max){
   newMax = max
   rasterBand[rasterBand<=newMin] = NA
   rasterBand[rasterBand>=newMax] = NA
-  minValue = minValue(rasterBand)
-  maxValue = maxValue(rasterBand)
+  minValue = raster::minValue(rasterBand)
+  maxValue = raster::maxValue(rasterBand)
   scale = scaling(rasterBand,minValue,maxValue)
   graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
   raster::image(scale,axes=FALSE,legend=FALSE, frame=FALSE)
