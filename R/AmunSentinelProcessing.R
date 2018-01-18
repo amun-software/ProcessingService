@@ -23,7 +23,8 @@ TCI_grayscale = function(img){
                           end = 1.0, # white
                           gamma=2.2, #correction from linear to nonlinear (conversion from camera to human eye)
                           alpha = NULL)# transparency
-  raster::plot(rasterIMG,col=grayscale)
+  graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
+  raster::image(rasterIMG,col=grayscale,axes=FALSE,legend=FALSE, frame=FALSE)
 
 }
 
@@ -41,16 +42,19 @@ Contrast = function(band,min,max){
   minValue = raster::minValue(rasterBand)
   maxValue = raster::maxValue(rasterBand)
   scale = scaling(rasterBand,minValue,maxValue)
-  graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
-  raster::image(scale,axes=FALSE,legend=FALSE, frame=FALSE)
-  
-  
-  
   
 }
 
 scaling = function (rasterBand,minValue,maxValue){
   ((rasterBand-minValue)*255 / (maxValue -minValue) + 0)
+}
+
+ContrastRGB = function(red,green,blue,rmin,rmax,gmin,gmax,bmin,bmax){
+  r = Contrast(red,rmin,rmax)
+  g = Contrast(green,gmin,gmax)
+  b = Contrast(blue,bmin,bmax)
+  graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
+  raster::plotRGB(RGB_brick,r=1,g=2,b=3,stretch="lin")
 }
 
 
