@@ -14,7 +14,7 @@ test = function(number){
 #' @param channel2 Second Channel of the image
 #' @param channel3 Third Channel of the image 
 #' @return returns an RGB image consisting of the input channels as R,G and B
-TCI = function(channel1,channel2,channel3){
+RGB = function(channel1,channel2,channel3){
   r = raster::raster(channel1)
   g = raster::raster(channel2)
   b = raster::raster(channel3)
