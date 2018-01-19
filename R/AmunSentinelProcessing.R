@@ -32,7 +32,7 @@ TCI_grayscale = function(img,min,max){
                           gamma=2.2, #correction from linear to nonlinear (conversion from camera to human eye)
                           alpha = NULL)# transparency
   graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
-  raster::image(rasterIMG,col=grayscale,axes=FALSE,legend=FALSE, frame=FALSE)
+  raster::image(contrast,col=grayscale,axes=FALSE,legend=FALSE, frame=FALSE)
   
 }
 
