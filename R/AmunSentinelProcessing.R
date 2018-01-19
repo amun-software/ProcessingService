@@ -55,6 +55,7 @@ Contrast = function(band,min,max){
   minValue = raster::minValue(rasterBand)
   maxValue = raster::maxValue(rasterBand)
   scale = scaling(rasterBand,minValue,maxValue)
+  return (scale)
   
 }
 
@@ -91,7 +92,8 @@ ContrastRGB = function(red,green,blue,rmin,rmax,gmin,gmax,bmin,bmax){
   r = Contrast(red,rmin,rmax)
   g = Contrast(green,gmin,gmax)
   b = Contrast(blue,bmin,bmax)
-  raster::brick(r,g,b)
+  raster = raster::brick(r,g,b)
+  return(raster)
 }
 
 
