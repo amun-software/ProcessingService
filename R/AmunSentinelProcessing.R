@@ -21,7 +21,7 @@ TCI = function(channel1,channel2,channel3){
   RGB_brick= raster::brick(r,g,b)
   RGB_brick[RGB_brick<=0] = NA
   graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
-  raster::plotRGB(RGB_brick,r=1,g=2,b=3,stretch="lin",bgalpha=0)
+  raster::plotRGB(RGB_brick,r=1,g=2,b=3,stretch="hist",bgalpha=0)
 }
 
 #' Delivers the TCI image as grayscale
