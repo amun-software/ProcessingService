@@ -24,8 +24,8 @@ RGB = function(channel1,channel2,channel3,rmin,rmax,gmin,gmax,bmin,bmax){
 #' Delivers the TCI image as grayscale
 #' @param img The image which will be displayed as grayscale
 #' @return returns grayscale image
-TCI_grayscale = function(img){
-  rasterIMG = raster::raster(img)
+TCI_grayscale = function(img,min,max){
+  contrast = getContrastSeperatly(img,min,max)
   grayscale = gray.colors(100, # number of colors
                           start = 0.0, #black
                           end = 1.0, # white
@@ -64,10 +64,7 @@ Contrast = function(band,min,max){
 #' @param max max contrast value
 #' @return Displays the image with new Contrast
 getContrastSeperatly = function(band,min,max){
-  Contrast(band,min,max)
-  graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
-  raster::image(output,axes=FALSE,legend=FALSE, frame=FALSE, col=base::rev(terrain.colors(3)))
-  
+  Contrast(band,min,max)  
 }
 
 #' Scales the image from 0 to 255
