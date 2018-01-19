@@ -14,14 +14,11 @@ test = function(number){
 #' @param channel2 Second Channel of the image
 #' @param channel3 Third Channel of the image 
 #' @return returns an RGB image consisting of the input channels as R,G and B
-RGB = function(channel1,channel2,channel3){
-  r = raster::raster(channel1)
-  g = raster::raster(channel2)
-  b = raster::raster(channel3)
-  RGB_brick= raster::brick(r,g,b)
-  RGB_brick[RGB_brick<=0] = NA
+RGB = function(channel1,channel2,channel3,rmin,rmax,gmin,gmax,bmin,bmax){
+  contrast = ContrastRGB(channel1,channel2,channel3,rmin,rmax,gmin,gmax,bmin,bmax)
+  contrast[contrast<=0] = NA
   graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
-  raster::plotRGB(RGB_brick,r=1,g=2,b=3,bgalpha=0)
+  raster::plotRGB(contrast,r=1,g=2,b=3,bgalpha=0)
 }
 
 #' Delivers the TCI image as grayscale
@@ -97,8 +94,7 @@ ContrastRGB = function(red,green,blue,rmin,rmax,gmin,gmax,bmin,bmax){
   r = Contrast(red,rmin,rmax)
   g = Contrast(green,gmin,gmax)
   b = Contrast(blue,bmin,bmax)
-  graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
-  raster::plotRGB(RGB_brick,r=1,g=2,b=3,stretch="lin")
+  raster::brick(r,g,b)
 }
 
 
