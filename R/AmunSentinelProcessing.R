@@ -26,7 +26,7 @@ RGB = function(channel1,channel2,channel3,rmin,rmax,gmin,gmax,bmin,bmax){
 #' @return returns grayscale image
 TCI_grayscale = function(img,min,max){
   contrast = getContrastSeperatly(img,min,max)
-  grayscale = gray.colors(2, # number of colors
+  grayscale = gray.colors(10, # number of colors
                           start = 0.0, #black
                           end = 1.0, # white
                           gamma=2.2, #correction from linear to nonlinear (conversion from camera to human eye)
