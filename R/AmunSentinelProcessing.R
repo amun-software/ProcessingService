@@ -29,7 +29,7 @@ TCI_grayscale = function(img,min,max){
   grayscale = gray.colors(100, # number of colors
                           start = 0.0, #black
                           end = 1.0, # white
-                          gamma=0.3, #correction from linear to nonlinear (conversion from camera to human eye)
+                          gamma=2.2, #correction from linear to nonlinear (conversion from camera to human eye)
                           alpha = NULL)# transparency
   graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
   raster::image(contrast,col=grayscale,axes=FALSE,legend=FALSE, frame=FALSE)
@@ -50,8 +50,8 @@ Contrast = function(band,min,max){
   rasterBand = raster::raster(band)
   newMin = min
   newMax = max
-  rasterBand[rasterBand<=newMin] = NA
-  rasterBand[rasterBand>=newMax] = NA
+  rasterBand[rasterBand<=newMin] = newMin
+  rasterBand[rasterBand>=newMax] = newMax
   minValue = raster::minValue(rasterBand)
   maxValue = raster::maxValue(rasterBand)
   scale = scaling(rasterBand,minValue,maxValue)
