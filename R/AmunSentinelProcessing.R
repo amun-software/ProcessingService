@@ -26,6 +26,7 @@ RGB = function(channel1,channel2,channel3,rmin,rmax,gmin,gmax,bmin,bmax){
 #' @return returns grayscale image
 TCI_grayscale = function(img,min,max){
   contrast = getContrastSeperatly(img,min,max)
+  contrast[contrast<=0] = NA
   grayscale = gray.colors(100, # number of colors
                           start = 0.0, #black
                           end = 1.0, # white
