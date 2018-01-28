@@ -120,7 +120,7 @@ NDVI_Result = function(x,y){
 #' @param string expression
 #' @param ... different Bands
 #' @return result Image
-expressionResult = function(string,B01,B02,B03){
+expressionResult = function(string,...){
   regex = "(B[0-1][0-9]|A[126]0mB[0-1][0-9])"
   firstCheck = base::gsub("m/","m",string)
   check = base::gsub(regex, "raster::raster(\\1)", firstCheck)
