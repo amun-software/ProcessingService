@@ -122,13 +122,13 @@ NDVI_Result = function(x,y){
 #' @return result Image
 expressionResult = function(string,...){
   list = base::list(...)
-  #regex = "(B[0-1][0-9]|A[126]0mB[0-1][0-9])"
-  #firstCheck = base::gsub("m/","m",string)
-  #check = base::gsub(regex, "raster::raster(\\1)", firstCheck)
-  #result = base::lapply(check, function(x) base::eval(base::parse(text=x)))
-  #result2 = base::do.call(base::cbind, result)
-  #graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
-  #raster::image((result2[[1]]),axes=FALSE,legend=FALSE, frame=FALSE, col=base::rev(terrain.colors(3)))
-                        list
+  regex = "(B[0-1][0-9]|A[126]0mB[0-1][0-9])"
+  firstCheck = base::gsub("m/","m",string)
+  check = base::gsub(regex, "raster::raster(\\$1)", firstCheck)
+  result = base::lapply(check, function(x) base::eval(base::parse(text=x)))
+  result2 = base::do.call(base::cbind, result)
+  graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
+  raster::image((result2[[1]]),axes=FALSE,legend=FALSE, frame=FALSE, col=base::rev(terrain.colors(3)))
+                        
   
 }
