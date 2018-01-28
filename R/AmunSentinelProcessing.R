@@ -4,7 +4,9 @@ library(graphics)
 
 graphics::par(bg=NA)
 
-
+test = function (...){
+  base::exists("...")
+  }
 
 ##########################Kanal-Mapping########################################
 #' TCI Function
