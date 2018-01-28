@@ -4,9 +4,7 @@ library(graphics)
 
 graphics::par(bg=NA)
 
-test = function(number){
-  return (number)
-  }
+
 
 ##########################Kanal-Mapping########################################
 #' TCI Function
