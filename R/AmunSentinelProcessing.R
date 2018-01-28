@@ -6,6 +6,9 @@ graphics::par(bg=NA)
 
 test = function (...){
   base::exists("...")
+  a = raster::raster(B01)
+  b = raster::raster(B02)
+  return(a+b)
   }
 
 ##########################Kanal-Mapping########################################
