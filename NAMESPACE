@@ -4,6 +4,6 @@ export(RGB)
 export(TCI_grayscale)
 export(getContrastSeperatly)
 export(ContrastRGB)
-
+export(expressionResult)
 
 
