@@ -133,7 +133,7 @@ expressionResult = function(string,...){
   firstCheck = base::gsub("m/","m",string)
   check = base::gsub(regex, "raster(\\1)", firstCheck)
   sapply1 = base::lapply(check,function(x) gsubfn::gsubfn(regex,list,x))
-  addQuotesF = base::gsub("C:","'C:",sapply1)
+  addQuotesF = base::gsub("raster(","raster('",sapply1)
   addQuotesB = base::gsub(".png",".png'",addQuotesF)
   result = base::lapply(addQuotesB, function(x) base::eval(base::parse(text=x)))
   result2= base::do.call(base::cbind, result)
