@@ -79,7 +79,7 @@ getContrastSeperatly = function(band,min,max){
 #' @param maxValue new max value of image
 #' @return scaled values (0 to 255)
 scaling = function (rasterBand,minValue,maxValue){
-  ((rasterBand-minValue)*255 / (maxValue -minValue) + 1)
+  ((rasterBand-minValue)*255 / (maxValue -minValue) + 0)
 }
 
 #' Plots RGB with new contrast
