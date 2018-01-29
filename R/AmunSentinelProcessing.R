@@ -19,8 +19,10 @@ test = function (...){
 #' @param channel3 Third Channel of the image 
 #' @return returns an RGB image consisting of the input channels as R,G and B
 RGB = function(channel1,channel2,channel3,rmin,rmax,gmin,gmax,bmin,bmax){
+  channel1[channel1<=0] = NA
+  channel2[channel2<=0] = NA
+  channel3[channel3<=0] = NA
   contrast = ContrastRGB(channel1,channel2,channel3,rmin,rmax,gmin,gmax,bmin,bmax)
-  contrast[contrast<=0] = NA
   graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
   raster::plotRGB(contrast,r=1,g=2,b=3,bgalpha=0)
 }
