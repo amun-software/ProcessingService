@@ -1,5 +1,6 @@
 library(raster)
 library(graphics)
+library(gsubfn)
 
 
 graphics::par(bg=NA)
