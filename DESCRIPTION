@@ -12,6 +12,8 @@ Imports: graphics,
          raster,
          sp,
          methods,
-         rgdal
+         rgdal,
+         gsubfn,
+         toto
 
 
