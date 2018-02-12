@@ -5,11 +5,9 @@ library(gsubfn)
 
 graphics::par(bg=NA)
 
-test = function (...){
-  base::exists("...")
-  a = raster::raster(B01)
-  b = raster::raster(B02)
-  return(a+b)
+test = function (a){
+ graphics::par(bg=NA,mar=c(0,0,0,0),oma=c(0,0,0,0))
+ raster::image(a) 
   }
 
 ##########################Kanal-Mapping########################################
